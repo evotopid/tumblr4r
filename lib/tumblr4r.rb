@@ -4,9 +4,12 @@ require 'net/http'
 require 'rexml/document'
 begin
   require 'active_support/core_ext'
-  require 'active_support/core_ext'
 rescue
-  require 'activesupport'
+  begin
+    require 'activesupport'
+  rescue
+    require 'active_support/all'
+  end
 end
 
 require 'logger'
